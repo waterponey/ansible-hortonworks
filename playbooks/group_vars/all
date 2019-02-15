@@ -16,8 +16,6 @@ hdf_build_number: 'auto'                                  # the HDF build number
 hdpsearch_version: '4.0.0'                                # must be the full version number
 hdpsearch_build_number: '400'                             # the HDP Search build number from docs.hortonworks.com
 
-repo_base_url: 'http://public-repo-1.hortonworks.com'     # change this if using a Local Repository
-
 
 ###########################
 ## general configuration ##
@@ -219,3 +217,15 @@ hdfs_ha_name: "{{ cluster_name | regex_replace('_','-') }}"
 #############################
 
 is_vm_docker_containers: 'no'                             # docker containers have some specifics like mount points for example
+
+###############################
+### repository configuration ##
+###############################
+
+hdp_main_repo_id: 'HDP-{{ hdp_minor_version }}' 
+hdf_main_repo_id: 'HDF-{{ hdf_minor_version }}' 
+gpl_repo_id: 'HDP-{{ hdp_minor_version }}-GPL' 
+utils_repo_id: 'HDP-UTILS-{{ utils_version }}' 
+satellite_version: true
+
+repo_base_url: 'http://'     # change this if using a Local Repository
